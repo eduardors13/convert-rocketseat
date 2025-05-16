@@ -45,12 +45,14 @@ function convertCurrency(amount, price, symbol) {
   description.textContent = `${symbol} 1 = ${price}`
 
   // Calcula o resultado total
-  let total = amount * price
+  let total = (amount * price)
+
+  // Formatação do valor
+  total = formatCurrencyBRL(total).replace("R$", "")
+
 
   // Exibe o resultado total
-  result.textContent = total
-
-
+  result.textContent = `${total} Reais`
 
   // Aplica a classe que exibe o footer com o resultado.
   footer.classList.add("show-result")
